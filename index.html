@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Технічні роботи — НПУ NG</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080d17;
+      --panel: #101b30;
+      --border: rgba(255, 255, 255, .1);
+      --gold: #f6c33e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      overflow: hidden;
+      color: var(--text);
+      background-color: var(--bg);
+      background-image: linear-gradient(to right, rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+    }
+    .maintenance-card {
+      width: min(100%, 680px);
+      padding: clamp(28px, 6vw, 54px);
+      text-align: center;
+      background: linear-gradient(180deg, var(--panel), #0b1322);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 28px 80px rgba(0,0,0,.45);
+      position: relative;
+      overflow: hidden;
+    }
+    .maintenance-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: var(--gold);
+    }
+    .brand {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .icon {
+      width: 88px;
+      height: 88px;
+      margin: 30px auto 24px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(246,195,62,.28);
+      border-radius: 24px;
+      background: rgba(246,195,62,.08);
+      color: var(--gold);
+      font-size: 42px;
+      animation: float 2.8s ease-in-out infinite;
+    }
+    h1 { margin: 0 0 14px; font-size: clamp(30px, 6vw, 46px); line-height: 1.1; }
+    p { max-width: 520px; margin: 0 auto; color: var(--muted); font-size: 16px; line-height: 1.7; }
+    .status {
+      width: min(100%, 340px);
+      height: 7px;
+      margin: 30px auto 14px;
+      overflow: hidden;
+      border-radius: 99px;
+      background: rgba(255,255,255,.08);
+    }
+    .status span {
+      display: block;
+      width: 38%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--gold);
+      animation: loading 1.8s ease-in-out infinite alternate;
+    }
+    .status-label { color: #fde68a; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+    .footer { margin-top: 34px; color: #64748b; font-size: 12px; }
+    @keyframes loading { from { transform: translateX(0); } to { transform: translateX(165%); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }
+  </style>
+</head>
+<body>
+  <main class="maintenance-card">
+    <div class="brand">НПУ NG · Академія</div>
+    <div class="icon" aria-hidden="true">⚙</div>
+    <h1>Технічне оновлення</h1>
+    <p>На сайті проводяться технічні роботи та оновлення.</p>
+    <div class="status" aria-hidden="true"><span></span></div>
+    <div class="status-label">ТРИВАЄ ОНОВЛЕННЯ</div>
+    <div class="footer">Дякуємо за розуміння</div>
+  </main>
+</body>
+</html>
